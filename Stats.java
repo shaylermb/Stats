@@ -7,8 +7,8 @@ public class Stats {
 		// System.out.println(mean(a));
 		// System.out.println(standardDev(a));
 		//System.out.println(mode(a));
-		System.out.println(quartile1(a));
-		System.out.println(quartile3(a));
+		//System.out.println(quartile1(a));
+		//System.out.println(quartile3(a));
 		//done
 	}
 	public static int max(int[] a){
