@@ -1,9 +1,9 @@
 public class Stats {
 	public static void main(String[] args) {
-		int[] a = {1,2,3};
+		int[] a = {1};
 		// System.out.println(max(a));
 		// System.out.println(min(a));
-		// System.out.println(median(a));
+		//System.out.println(median(a));
 		// System.out.println(mean(a));
 		// System.out.println(standardDev(a));
 		//System.out.println(mode(a));
@@ -34,6 +34,9 @@ public class Stats {
 			return medianRange(a, 0 , a.length-1);
 		}
 	public static double medianRange(int[] a, int start, int end) {
+			if (a.length==1) {
+				return a[0];
+			}
 			int length = (end - start) + 1;
 			if (length % 2 == 0) {
 				return ((a[start + (length / 2) - 1] + a[start + (length / 2)]) / 2.0);
