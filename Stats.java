@@ -1,12 +1,14 @@
-class Stats {
+public class Stats {
 	public static void main(String[] args) {
-		int[] a = {1,2,3,3,4,5,6,7,8,9,10};
+		int[] a = {1,2,3};
 		// System.out.println(max(a));
 		// System.out.println(min(a));
 		// System.out.println(median(a));
 		// System.out.println(mean(a));
 		// System.out.println(standardDev(a));
-		System.out.println(mode(a));
+		//System.out.println(mode(a));
+		System.out.println(quartile1(a));
+		System.out.println(quartile3(a));
 		//done
 	}
 	public static int max(int[] a){
@@ -29,7 +31,7 @@ class Stats {
 		return mi;
 	}
 	public static double median(int[] a) {
-			return medianRange(a, 0 , a.length - 1);
+			return medianRange(a, 0 , a.length-1);
 		}
 	public static double medianRange(int[] a, int start, int end) {
 			int length = (end - start) + 1;
@@ -48,13 +50,19 @@ class Stats {
 		return mn;
 	}
 	public static double quartile1(int[] a) {
-		return medianRange(a, 0, (a.length / 4) + 1);
+		return medianRange(a, 0, (a.length / 4));
 	}
 
 	public static double quartile3(int[] a) {
-		return medianRange(a, (a.length / 2), (a.length));
+		if(a.length%2 == 0){
+			return medianRange(a, (a.length / 2), (a.length-1));
+		} else {
+			return medianRange(a, a.length/2, (a.length));
+		}
+		
+
 	}
-	public static double standardDev(int[] a) {
+	public static double standardDeviation(int[] a) {
 		double sum = 0;
 		double mean = mean(a);
 
